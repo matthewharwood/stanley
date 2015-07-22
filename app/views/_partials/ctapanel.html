@@ -1,0 +1,8 @@
+<div class="ctabox" id="ctabox" ng-style="ctaBlockStyle">
+	<ul class="cta_container" ng-controller="CtaPanelController" ng-init="init(initialCTA,maxCTA,cta)">
+		<li ng-repeat="ctaitem in ctaList" ng-controller="CtaColorCtrl" class="cell" ctacontrol>
+			<colorctapanel></colorctapanel>
+			<a class="cta" ng-class="ctaitem.ctaclass"><inline-edit model="ctaitem.text"></inline-edit></a>
+		</li>
+	</ul>
+</div>

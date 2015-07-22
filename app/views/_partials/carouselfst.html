@@ -1,0 +1,60 @@
+<figure>
+    <div class="sidebar-wrap">
+        <img src="images/sidebar.png" alt="">
+    </div>
+    <div class="carousel-active-placeholder">
+       <div class="placeholder-wrap control-hover fst" ng-repeat="fst in section.data" ng-show="(currentImageIndex==$index)" ng-controller="FstController" file-dropzone="[image/png, image/jpeg, image/gif]" file="fst.image" file-name="imageFileName" data-max-file-size="3" >
+            <fstcontrolpanel></fstcontrolpanel>
+                
+            <img class="placeholder-img" ng-src="{{fst.image}}" alt="" ng-class="(currentImageIndex==$index)?'active':''" ng-model="fst.image" />
+            <div class="image-wrapper-fst">
+            <div class="hero-block-container" ng-class="fstHorizontalAlignCenter">
+                <div class="hero-block" ng-class="fstGridClass" ng-style="heroBlockStyle" id='hero-block' ui-sortable ng-model="fst.sections">
+                    <div ng-repeat="fstsection in fst.sections" ng-switch on="fstsection.type">
+                        <fstcaption model="fstsection.data" ng-switch-when="caption"></fstcaption>
+                        <fstsubcaption model="fstsection.data" ng-switch-when="subcaption"></fstsubcaption>
+                        <fstbody model="fstsection.data" ng-switch-when="body"></fstbody>
+                        <fstcta model="fstsection.data" initial="1" max="2" ng-switch-when="cta"></fstcta>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+            <div ng-switch on="fst.video">
+
+                <div ng-switch-when=""></div>
+                <div class="video-box" ng-switch-default>
+                    
+                    <video preload="true" loop="loop" muted="true" autoplay><source src="{{fst.video}}" type="video/mp4">Your browser does not support the video tag.</video>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="hero-block-mobile">
+        <div ng-repeat="fstsection in section.data[currentImageIndex].sections" ng-switch on="fstsection.type">
+            <fstcaption model="fstsection.data" ng-switch-when="caption"></fstcaption>
+        </div>
+        <div ng-repeat="fstsection in section.data[currentImageIndex].sections" ng-switch on="fstsection.type">
+            <fstcta model="fstsection.data" ng-switch-when="cta"></fstcta>
+        </div>
+    </div>
+    <!-- TODO THIS NEEDS TO BE FIXED -->
+<!--     <div class="container mobile-caption">
+        <div class="row">
+            <div class="col-12">
+                <h1>a
+                    <inline-edit model="carousel[0].caption"></inline-edit>
+                </h1>
+                <p>
+                    <inline-edit model="carousel[0].subcaption"></inline-edit>
+                </p>
+            </div>
+        </div>
+    </div>   -->
+    <div class="control-wrap">
+        <div class="control-panel">
+            <div ng-repeat="fst in section.data" class="circles" ng-click="carouselGoto($index)" ng-class="(currentImageIndex==$index)?'active':''"></div>
+        </div>
+    </div>
+</figure>

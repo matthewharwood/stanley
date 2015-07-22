@@ -1,0 +1,78 @@
+<div ng-controller="TemplateCtrl">
+	<div id="save_status" class="save_status" ng-show="(showSaveStatus==1)" ng-click="hideSave()">
+		<div class="status_box">Your page has been saved</div>
+	</div>
+
+	<div class="top_menu">
+		<div class="container" >
+			<div class="versionMenu">
+				<div class="title">Page</div>
+				<ul>
+					<li><a href="" ng-click="ProjectPage()"><i class="fa fa-arrow-left"></i></a></li>
+		 			<li><a href="" ng-click="LoadTemplatePanel()" class="load-tpl"><i class="fa fa-file-o"></i> Load</a></li>
+		  			<li><a href="" ng-click="SavePage()" class="save-page"><i class="fa fa-floppy-o"></i> Save</a></li>
+					<li><a href="" ng-click="DuplicatePage()" class="duplicate-page"><i class="fa fa-copy"></i> Copy</a></li>
+					<li><a href="" ng-click="ExportImages()" class="export-images"><i class="fa fa-download"></i> Images</a></li>
+					<li><a href="" id="export_btn" class="export-images" style="display:none">Really Export</a></li>
+		  		</ul>
+	  		</div>
+	  		<div class="editMenu">
+				<div class="title">Controls</div>
+				<ul>
+					<li><a href="" ng-click="toggleTplColor()" class="toggle-color"><i class="fa fa-pencil"></i> Color</a></li>
+					<li><a href="" ng-click="addFST()" class="add-fst"><i class="fa fa-plus"></i> FST</a></li>
+					<li><a href="" ng-click="addEGRow()" class="add-fst"><i class="fa fa-plus"></i> Row</a></li>
+					<li><a href="" ng-click="toggleMaxWidth()" class="add-fst"><i class="fa fa-arrows-h"></i> Fill</a></li>
+		  		</ul>
+	  		</div>
+	  	</div>
+	  	<i class="icon-scrub bottom-pos"></i>
+	</div>
+	<div class="top_menu-mobile" ng-class="{'active-mobile-menu': menu_on}">
+		<ul>
+			<li><a href="" ng-click="ProjectPage()"><i class="fa fa-arrow-left"></i>  Back</a></li>
+ 			<li><a href="" ng-click="LoadTemplatePanel()" class="load-tpl"><i class="fa fa-file-o"></i> Load</a></li>
+  			<li><a href="" ng-click="SavePage()" class="save-page"><i class="fa fa-floppy-o"></i> Save</a></li>
+			<li><a href="" ng-click="DuplicatePage()" class="duplicate-page"><i class="fa fa-copy"></i> Copy</a></li>
+			<li><a href="" ng-click="ExportImages()" class="export-images"><i class="fa fa-download"></i> Images</a></li>
+			<li><a href="" id="export_btn" class="export-images" style="display:none">Really Export</a></li>
+			<li><a href="" ng-click="toggleTplColor()" class="toggle-color"><i class="fa fa-pencil"></i> Color</a></li>
+			<li><a href="" ng-click="addFST()" class="add-fst"><i class="fa fa-plus"></i> FST</a></li>
+			<li><a href="" ng-click="addEGRow()" class="add-fst"><i class="fa fa-plus"></i> Row</a></li>
+			<li><a href="" ng-click="toggleMaxWidth()" class="add-fst"><i class="fa fa-arrows-h"></i> Fill</a></li>
+  		</ul>
+		
+	</div>
+<!-- 	<div class="bottom_menu">
+		<div class="container">
+			<ul>
+				<li class="return"><a href="/#/{{project_name}}">Return to<br> project page</a></li>
+	 			<li ng-repeat="version in versionArray | object2array | orderBy:'-last_updated' | limitTo: '4'">
+	 				<a href="/#/{{project_name}}/{{page_name}}/{{version.version}}" ng-class="version.version == version_number?'active':''"><div class="version_index">{{formatVersionNum($index)}}</div>
+	 				<div class="title">{{version.title}}</div>
+	 				<div class="info"><span class="date">{{version.last_updated | date : 'd MMM y'}}</span> <span class="time">{{version.last_updated | date : 'h:mm a'}}</span></div>
+	 				</a></li>
+	 		</ul>
+	 	</div>
+	 	<i class="icon-scrub top-pos"></i>
+	 </div> -->
+	<mainmenu></mainmenu>
+
+	<div ui-sortable ng-model="tpl_sections" ng-class="tpl_color">
+				    
+		<div ng-repeat="section in tpl_sections | orderByPriority" ng-switch on="section.type">
+			<sectioncarousel ng-switch-when="carousel"></sectioncarousel>
+
+			 <!-- **************Start of Editorial Grid **********************-->
+			<sectioneditorialgrid ng-switch-when="eg"></sectioneditorialgrid>
+			<!-- **************End of Editorial Grid **********************-->
+
+			<!-- **************Start of Dynamic FST **********************-->
+			<sectiondynamicfst ng-switch-when="fst"></sectiondynamicfst>
+			<!-- **************End of Dynamic FST **********************-->
+		</div>
+	</div>
+	<loadtemplatepanel></loadtemplatepanel>
+	<loadexportpanel></loadexportpanel>
+	<mainfooter></mainfooter>
+</div>

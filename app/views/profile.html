@@ -1,0 +1,86 @@
+<div ng-controller="ProjectCtrl">
+<div class="account-profile" >
+	<header class="account-header">
+		<div class="profile-figure">
+		<img src="images/jordan-profile.png" alt="">
+
+			<div class="logo-primary">
+				<img  src="images/jordan-logo-82-trans.png" alt="" />
+			</div>
+		</div>
+
+	</header>
+	<div class="content-body-wrapper">
+		<div class="content-body container">
+			<div class="instruction">
+				<div class="project-manager-title">
+					<h2 >Project Manager</h2>
+					<h3 >Select a project to edit.</h3>
+				</div>
+				<div class="project-manager-actions">
+					<a class="cta red" ng-click="AddNewProject()">Add Project</a>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<!-- START PROJECT LISTING -->
+
+			<div ng-repeat="project in projectsListing | object2array | orderBy:'-created' " ng-controller="ProjectsListingController">
+				<div class="project-card">
+
+					<div class="clear-it">
+						<header class="project-info">
+							<h3 class="project-title"><inline-project-name-edit version="inline-project-name" model="project.name"></inline-project-name-edit></h3>
+							<h4 class="project-type"><inline-project-type-edit version="inline-project-type" model="project.type"></inline-project-type-edit></h4>
+							<h5 class="project-desc"><inline-project-description-edit version="inline-project-desc" model="project.description"></inline-project-description-edit></h5>
+						</header>
+						
+						<div class="project-actions">
+							<a class="cta pearlescentWhite pull-right" ng-click="addNewVersionPage()">Add Version</a>
+							<span class="delete-tab" ng-click="DeleteProject()">Delete Project</span>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear-it">
+					<div ng-switch on="projectsListPages">
+						<div class="no-pages" ng-switch-when="null">
+							No pages have been created.
+						</div>
+						<div ng-switch-default>
+							<!-- start of table-row -->
+							<div class="table-row" ng-repeat="page in projectsListPages | object2array | orderBy:'-last_updated'" ng-controller="PageController">
+								<div class="page-info">
+									<div class="page-version">
+										<p class="version-num">{{formatVersionNum($index)}}</p>
+									</div>
+									<div class="page-title">
+										<p class="version-title"><inline-page-name-edit version="inline-page-name" model="page.title"></inline-page-name-edit></p>
+										<div class="info"><span class="date">{{page.last_updated | date : 'd MMM y'}}</span> - <span class="time">{{page.last_updated | date : 'h:mm a'}}</span></div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="page-actions">
+										<a href="/#/{{account_name}}/{{project.key}}/{{page.version}}" class="cta metalicGray pull-right" >Open Version</a>
+										<a class="cta pearlescentWhite pull-right" ng-click="deletePage()">Delete Version</a>
+									<div class="clear"></div>
+								</div>
+
+							</div>
+							<!-- end of table-row -->
+					</div>
+				</div>
+			</div>
+			</div>
+
+
+			</div>
+
+			<!-- END PROJECT LISTING -->
+
+			
+		</div>
+
+	</div>
+</div>
+</div>

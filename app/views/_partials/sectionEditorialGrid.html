@@ -1,0 +1,20 @@
+<section class="container tout-section eg" ng-controller="EditorialGridController" type="eg">
+
+    <!--<a href="" class="add-row-btn" ng-click="addGridRow()">Add Row</a>-->
+    <div ng-model="section.data" ui-sortable>
+        <div class="row" ng-repeat="row in section.data" ng-init="rowIndex = $index" ng-class="(row.scallop)?'scallop':''">
+            <ul class="add-tout-btn">
+                <li><a href="" ng-click="removeGridRow($index)"><i class="fa fa-times"></i></a></li>
+                <li><a href="" ng-click="addTouts($index)"><i class="fa fa-plus"></i></a></li>
+                <li><a href="" ng-click="toggleGridRowScallop($index)"><i class="fa fa-ellipsis-v"></i></a></li>
+            </ul>
+            <input ng-hide="true" value="row" ng-model="row" />
+            <div ng-repeat="toutInstance in row.touts track by $index" ng-controller="ToutController">
+               
+                <div class="tout col-12 col-md-{{toutInstance.classlg}}{{((($index+1) == (row.touts.length))&&$index>0)?'n':''}} col-lg-{{toutInstance.classlg}}{{((($index+1) == (row.touts.length))&&$index>0)?'n':''}}">
+                    <card cta="toutInstance.cta" ></card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

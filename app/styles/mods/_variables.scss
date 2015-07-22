@@ -1,0 +1,18 @@
+//vars
+
+$total-columns: 12;
+$column-width   : 4.5em;
+$gutter-width   : .43em;
+$grid-padding   : $gutter-width;
+
+
+$mobile: 0 12 620px;
+$tablet: 621px 12 1023px;
+$computer: 1024px 12;
+// $mobile: 0 12 568px;
+// $tablet: 569px 12 569px;
+// $computer: 569px 12;
+.row {
+	position: relative;
+}
+

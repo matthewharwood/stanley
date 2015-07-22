@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,900'>
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+    <!-- endbuild -->
+
+  </head>
+  <body ng-app="jordanApp" ng-controller="MainCtrl">
+    
+    <script type="text/ng-template" id="componentTpl.html">  
+
+      <span class="{{subcaption}}" ng-hide="editMode" ng-click="editMode=true;value=model">{{model}}</span>
+      <input type="text" class="{{version}}" ng-model="value" ng-show="editMode" ng-model-instant ng-enter="editMode=false" ng-change="model = value"  onClick="this.select();"/>
+
+    </script>
+
+    <script type="text/ng-template" id="inlinePageName.html">  
+      <span ng-hide="editModePageName" ng-click="editModePageName=true;pageTitle=page.title">{{page.title}}</span>
+      <input type="text" class="inline-page-name" ng-model="pageTitle" ng-show="editModePageName" ng-model-instant ng-enter="editModePageName=false" ng-change="page.title = pageTitle"  ng-blur="updatePageName()" onClick="this.select();"/>
+    </script>
+
+    <script type="text/ng-template" id="inlineProjectName.html">  
+      <span ng-hide="editModeProjName" ng-click="editModeProjName=true;projectName=project.name">{{project.name}}</span>
+      <input type="text" class="inline-project-name" ng-model="projectName" ng-show="editModeProjName" ng-model-instant ng-enter="editModeProjName=false" ng-change="project.name = projectName" ng-blur="updateProjectName()" onClick="this.select();"/>
+    </script>
+
+    <script type="text/ng-template" id="inlineProjectType.html">  
+      <span ng-hide="editModeProjType" ng-click="editModeProjType=true;projectType=project.type">{{project.type}}</span>
+      <input type="text" class="inline-project-type" ng-model="projectType" ng-show="editModeProjType" ng-model-instant ng-enter="editModeProjType=false" ng-change="project.type = projectType" ng-blur="updateProjectType()" onClick="this.select();"/>
+    </script>
+
+    <script type="text/ng-template" id="inlineProjectDescription.html">  
+      <span ng-hide="editModeProjDesc" ng-click="editModeProjDesc=true;projectDesc=project.description">{{project.description}}</span>
+      <input type="text" class="inline-project-desc" ng-model="projectDesc" ng-show="editModeProjDesc" ng-model-instant ng-enter="editModeProjDesc=false" ng-change="project.description = projectDesc" ng-blur="updateProjectDescription()" onClick="this.select();"/>
+    </script>
+<!--     
+    <div id="loadingWidget" class="overlay-jordan" loading-widget>
+        <div class="loadingContent">
+            <img style="position: relative; left:18px; top:8px;" src="images/jordan-logo-82-trans-red.png" alt="">
+          
+        </div>
+    </div> -->
+  
+    <div class="page-container" ng-view="" id="page-container"></div>
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="scripts/jszip.min.js"></script>
+
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.7.0/angularfire.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/sortable.js"></script>
+    <script src="scripts/packery.pkgd.min.js"></script>
+    <script src="scripts/draggabilly.pkgd.min.js"></script>
+    
+
+        
+    <script src="scripts/controllers/mainCtrl.js"></script>
+
+    <!-- Universal Directives -->
+    <script src="scripts/directives/ngdrop.js"></script>
+    <script src="scripts/directives/ngedit.js"></script>
+
+    <!--The page! -->
+
+    <!-- Filter -->
+    <script src="scripts/filters/object2array.js"></script>
+
+    <!-- Model Factories -->
+    <script src="scripts/models/image_gen.js"></script>
+    <script src="scripts/models/carousel.js"></script>
+    <script src="scripts/models/template.js"></script>
+
+    <!--Project Controllers/Directives -->
+    <script src="scripts/controllers/projectCtrl.js"></script>
+    <script src="scripts/controllers/projectsListingCtrl.js"></script>
+    <script src="scripts/controllers/pageCtrl.js"></script>
+
+    <!--Template Controllers/Directives -->
+    <script src="scripts/controllers/templateCtrl.js"></script>
+    <script src="scripts/directives/template.js"></script>
+
+    <!--Partial Code -->
+    <script src="scripts/directives/partials.js"></script>
+
+
+    <!--Editorial Grid Controllers/Directives -->
+    <script src="scripts/controllers/editorialGridCtrl.js"></script>
+
+    <!--FST Controllers/Directives -->
+    <script src="scripts/controllers/fstCtrl.js"></script>
+    <script src="scripts/directives/fst.js"></script>
+
+
+    <!--Carousel Controllers/Directives -->
+    <script src="scripts/controllers/carouselCtrl.js"></script>
+    <script src="scripts/directives/carousel.js"></script>
+
+    <!--Cta Controllers/Directives -->
+    <script src="scripts/controllers/ctaCtrl.js"></script>
+    <script src="scripts/directives/cta.js"></script>
+
+
+    <!--Tout Controllers/Directives -->
+    <script src="scripts/controllers/toutCtrl.js"></script>
+ 
+    <!-- endbuild -->
+</body>
+</html>

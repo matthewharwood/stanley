@@ -1,0 +1,158 @@
+<!-- **************Start of Load Template Panel **********************-->
+<section class="load_tpl_container" ng-class="(tpl_panel_on?'active':'')">
+<div class="load_tpl_overlay" ng-click="LoadTemplatePanel()"></div>
+<div class="load_tpl_panel">
+  <h1 class="template-pick">Pick a Template</h1>
+  <ul>
+    <li>
+      <div class="tpl" ng-click="loadTemplates(1)">
+        <div class="block fst">FST</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w3 h1">3x1</div>
+        <div class="block w4 h1">4x1</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w2 h1">2x1</div>
+      </div>
+      <p class="template-label">A</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(2)">
+        <div class="block fst">FST</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w3 h1">3x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+      </div>
+      <p class="template-label">B</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(3)">
+        <div class="block fst">FST</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+      </div>
+      <p class="template-label">C</p>
+    </li>
+
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(4)">
+        <div class="block fst">FST</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+
+        <div class="block w2 h1">2x1</div>
+        <div class="block w2 h1">2x1</div>
+      </div>
+      <p class="template-label">D</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="LoadTpl(5)">
+        <div class="block fst">FST</div>
+
+        <div class="block w2 h1">2x1</div>
+        <div class="block w2 h1">2x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w3 h1">3x1</div>
+
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+      </div>
+      <p class="template-label">E</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(6)">
+        <div class="block fst">FST</div>
+
+        <div class="block w3 h1">3x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w3 h1">3x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+      </div>
+      <p class="template-label">F</p>
+    </li>
+    
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(7)">
+        <div class="block fst">FST</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w3 h1">3x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w4 h1">4x1</div>
+
+      </div>
+     <p class="template-label">G</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(8)">
+        <div class="block fst">FST</div>
+
+        <div class="block w2 h1">2x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w3 h1">3x1</div>
+
+        <div class="block w4 h1">4x1</div>
+      </div>
+      <p class="template-label">H</p>
+    </li>
+    
+    <li>
+      <div class="tpl" ng-click="loadTemplates(9)">
+        <div class="block fst">FST</div>
+
+        <div class="block w2 h1">2x1</div>
+        <div class="block w2 h1">2x1</div>
+
+        <div class="block w4 h1">4x1</div>
+
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+        <div class="block w1 h1">1x1</div>
+      </div>
+      <p class="template-label">I</p>
+    </li>
+  </ul>
+</div>
+</section>
+<!-- **************End of Load Template Panel **********************-->

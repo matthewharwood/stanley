@@ -1,0 +1,187 @@
+
+@import "mods/_fonts";
+@import "compass";
+@import "compass/css3";
+@import "susy";
+@import "mods/_variables";
+@import "mods/_navigation";
+@import "mods/_sections";
+@import "mods/_buttons";
+@import "mods/_footer";
+@import "mods/_ui-modal";
+@import "mods/_fstControls";
+@import "mods/_jordan";
+@import "mods/_accounts";
+@import "mods/_carousel";
+@import "mods/_packery";
+
+
+html, body{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+.page-container {
+    min-height: 100%;
+}
+.overlay-jordan {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background: #fff;
+    z-index: 9999999999;
+}
+.fadeing-out {
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+
+    -moz-animation-name: pulse;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: 1;
+
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    display: none;
+}
+@-moz-keyframes pulse {  
+    0% { opacity: 1; z-index: 99999}
+    90% { opacity: 1; z-index: 99999}
+    100% { opacity: 0;display: none;visibility: none; z-index: -1;} 
+}
+
+@-webkit-keyframes pulse {  
+    0% { opacity: 1; z-index: 99999}
+    90% { opacity: 1; z-index: 99999}
+    100% { opacity: 0;display: none;visibility: none; z-index: -1;} 
+}
+
+@keyframes pulse {  
+    0% { opacity: 1; z-index: 99999}
+    90% { opacity: 1; z-index: 99999}
+    100% { opacity: 0;display: none;visibility: none; z-index: -1;} 
+}
+
+ul, li {text-decoration: none; list-style-type: none;}
+
+    .container {
+        @include container  ($total-columns, $tablet, $computer);
+        
+        & .row:first-child {
+            padding-top: 30px;
+            min-height: inherit;
+        }
+    }
+
+    .row {
+        &:after {
+              content: "";
+              display: table;
+              clear: both;
+        }
+        padding-top: 18px;
+        min-height: 200px;
+        &.scallop {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+    }
+
+    .col-1 { @include span-columns(1,12);}
+    .col-2 { @include span-columns(2,12);}
+    .col-3 { @include span-columns(3,12);}
+    .col-4 { @include span-columns(4,12);}
+    .col-5 { @include span-columns(5,12);}
+    .col-6 { @include span-columns(6,12);}
+    .col-7 { @include span-columns(7,12);}
+    .col-8 { @include span-columns(8,12);}
+    .col-9 { @include span-columns(9, 12);} 
+    .col-10 { @include span-columns(10,12);}    
+    .col-11 { @include span-columns(11,12);}    
+    .col-12 { @include span-columns(12,12);}
+
+    .col-1n { @include span-columns(1 omega,12);}
+    .col-2n { @include span-columns(2 omega,12);}
+    .col-3n { @include span-columns(3 omega,12);}
+    .col-4n { @include span-columns(4 omega,12);}
+    .col-5n { @include span-columns(5 omega,12);}
+    .col-6n { @include span-columns(6 omega,12);}
+    .col-7n { @include span-columns(7 omega,12);}
+    .col-8n { @include span-columns(8 omega,12);}
+    .col-9n { @include span-columns(9 omega, 12);}  
+    .col-10n { @include span-columns(10 omega,12);} 
+    .col-11n { @include span-columns(11 omega,12);} 
+    .col-12n { @include span-columns(12 omega,12);}
+
+
+
+@include at-breakpoint($tablet){
+   body .container{
+
+   }
+    .col-md-1 { @include span-columns(1,12);}
+    .col-md-2 { @include span-columns(2,12);}
+    .col-md-3 { @include span-columns(3,12);}
+    .col-md-4 { @include span-columns(4,12);}
+    .col-md-5 { @include span-columns(5,12);}
+    .col-md-6 { @include span-columns(6,12);}
+    .col-md-7 { @include span-columns(7,12);}
+    .col-md-8 { @include span-columns(8,12);}
+    .col-md-9 { @include span-columns(9,12);}   
+    .col-md-10 { @include span-columns(10,12);} 
+    .col-md-11 { @include span-columns(11,12);} 
+    .col-md-12 { @include span-columns(12,12);}
+
+    .col-md-1n { @include span-columns(1 omega,12);}
+    .col-md-2n { @include span-columns(2 omega,12);}
+    .col-md-3n { @include span-columns(3 omega,12);}
+    .col-md-4n { @include span-columns(4 omega,12);}
+    .col-md-5n { @include span-columns(5 omega,12);}
+    .col-md-6n { @include span-columns(6 omega,12);}
+    .col-md-7n { @include span-columns(7 omega,12);}
+    .col-md-8n { @include span-columns(8 omega,12);}
+    .col-md-9n { @include span-columns(9 omega, 12);}   
+    .col-md-10n { @include span-columns(10 omega,12);}  
+    .col-md-11n { @include span-columns(11 omega,12);}  
+    .col-md-12n { @include span-columns(12 omega,12);}
+    
+}
+
+@include at-breakpoint($computer){
+
+    .col-lg-1 { @include span-columns(1,12);}
+    .col-lg-2 { @include span-columns(2,12);}
+    .col-lg-3 { @include span-columns(3,12);}
+    .col-lg-4 { @include span-columns(4,12);}
+    .col-lg-5 { @include span-columns(5,12);}
+    .col-lg-6 { @include span-columns(6,12);}
+    .col-lg-7 { @include span-columns(7,12);}
+    .col-lg-8 { @include span-columns(8,12);}
+    .col-lg-9 { @include span-columns(9, 12);}  
+    .col-lg-10 { @include span-columns(10,12);} 
+    .col-lg-11 { @include span-columns(11,12);} 
+    .col-lg-12 { @include span-columns(12,12);}
+
+    .col-lg-1n { @include span-columns(1 omega,12);}
+    .col-lg-2n { @include span-columns(2 omega,12);}
+    .col-lg-3n { @include span-columns(3 omega,12);}
+    .col-lg-4n { @include span-columns(4 omega,12);}
+    .col-lg-5n { @include span-columns(5 omega,12);}
+    .col-lg-6n { @include span-columns(6 omega,12);}
+    .col-lg-7n { @include span-columns(7 omega,12);}
+    .col-lg-8n { @include span-columns(8 omega,12);}
+    .col-lg-9n { @include span-columns(9 omega, 12);}   
+    .col-lg-10n { @include span-columns(10 omega,12);}  
+    .col-lg-11n { @include span-columns(11 omega,12);}  
+    .col-lg-12n { @include span-columns(12 omega,12);}
+      
+   }
+

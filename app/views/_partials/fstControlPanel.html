@@ -1,0 +1,28 @@
+<div class="fst-control-panel" ng-class="(FSTControlPanelOpen) ? 'open' : ''">
+	<div class="fst-control-trigger" ng-click="expandFSTControlPanel()"><i class="fa fa-pencil-square-o"></i></div>
+	<div class="position-controls">
+		<p class="margin-title">alignment</p>
+		<alignmentboxpanels grid="alignments" update="updateFSTAlign" fst-align="fstAlign"></alignmentboxpanels>
+	</div>
+	<div class="margin-slider">
+		<p class="margin-title">margin</p>
+		<input type="range" min="0" max="300"  ng-model="slidersControl.marginSlider" ng-change="marginSliderChange()" />
+	</div>
+	<div class="add-cta-control">
+		<p class="margin-title">add btn</p>
+		<addctadialog></addctadialog>
+	</div>
+	<div class="video-control">
+		<p class="margin-title">video</p>
+		<videocontrolpanel></videocontrolpanel>
+	</div>
+	<div class="video-control">
+		<p class="margin-title">video</p>
+		<removevideo></removevideo>
+	</div>
+	<div class="video-control">
+		<p class="margin-title">Remove FST</p>
+		<removefst></removefst>
+	</div>
+
+</div>

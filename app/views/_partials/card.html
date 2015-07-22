@@ -1,0 +1,83 @@
+
+<div class="flip-card" >
+	<div>
+	<div class="close-editing" ng-class="{'open' : flip}" ng-click="flip=false"><i class="fa fa-check"></i></div>
+
+	<figure class="front-card" file-dropzone="[image/png, image/jpeg, image/gif]" file="toutInstance.image" file-name="imageFileName" data-max-file-size="3" ng-class="{'darken':flip}" ng-model="toutInstance.image" ng-dblclick="flip=true"> 
+		<div class="image_box">
+			<img ng-class="{'blur':flip, 'toggle-width': toggleWidth}"  ng-src="{{toutInstance.image}}" alt="image goes here" ng-mouseenter="imageListen(true)" ng-mouseleave="imageDeaf(false)" ng-style="toutCss()">
+			<input type="hidden" ng-model="isChecked">
+			<input type="hidden"  class="image_scale" name="image_scale" ng-model="toutInstance.image_scale" />
+			<input type="hidden"  class="image_left" name="image_left" ng-model="toutInstance.image_left" />
+			<input type="hidden" xng-focus='isChecked' class="image_top" name="image_top" ng-model="toutInstance.image_top" /> 
+		</div>
+	</figure>
+		<div xng-focus="isChecked" class="scale-frame" ng-keydown="changeScale($event)" tabindex="0"></div> 
+
+	<figure class="front-card-mobile" file-dropzone="[image/png, image/jpeg, image/gif]" file="toutInstance.image_mobile" file-name="imageFileName" data-max-file-size="3" ng-class="{'darken':flip}"> 
+		<div class="image_box">
+			<img  ng-class="{'blur':flip, 'toggle-width': toggleWidth}" ng-src="{{toutInstance.image_mobile}}" alt="image"  ng-mouseenter="imageListenMobile(true)" ng-mouseleave="imageDeafMobile(false)" ng-style="toutCssMobile()">
+
+			<input type="hidden" ng-model="isCheckedMobile">
+			<input type="hidden"  class="image_scale" name="image_mobile_scale" ng-model="toutInstance.image_mobile_scale" />
+			<input type="hidden"  class="image_left" name="image_mobile_left" ng-model="toutInstance.image_mobile_left" />
+			<input type="hidden" xng-focus='isCheckedMobile' class="image_top" name="image_mobile_top" ng-model="toutInstance.image_mobile_top" /> 
+
+		</div>
+	</figure>
+
+	<div xng-focus="isCheckedMobile" class="scale-frame-mobile"  ng-keydown="changeScaleMobile($event)" tabindex="0"></div> 
+
+	<figure class="card-back" ng-class="{'open': flip}" > 
+		<form>
+			<table class="toutInput">
+				<tr>
+					<td colspan="2"><i class="fa fa-desktop"></i></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="radio" name="lg"  ng-model="toutInstance.classlg" value="3" /></td>
+					<td>1x1</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="radio" name="lg" ng-model="toutInstance.classlg" value="6"/> </td>
+					<td>2x1</td>
+				</tr>
+				<tr>  
+					<td colspan="2"><input type="radio" name="lg" ng-model="toutInstance.classlg" value="9"/></td>    
+					<td>3x1</td>
+				</tr>
+				<tr> 
+					<td colspan="2"><input type="radio" name="lg" ng-model="toutInstance.classlg" value="12"/></td>   
+					<td>4x1</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="add-button-tout-bg"><toutaddctadialog></toutaddctadialog></td>
+				</tr>
+				<tr>
+					<td colspan="3" ng-click="deleteTouts(rowIndex,$index)"><i class="fa fa-times"><span> DELETE</span></i> </td>    
+				</tr>
+			</table>
+		</form>
+	</figure>
+	</div>
+</div>
+<div class="tout-caption">
+	<input ng-hide="true" value="row" ng-model="toutInstance.caption" />
+	<input ng-hide="true" value="row" ng-model="toutInstance.subcaption" />
+	<input ng-hide="true" value="row" ng-model="toutInstance.caption_mobile" />
+	<input ng-hide="true" value="row" ng-model="toutInstance.subcaption_mobile" />
+	<h4 class="caption_box">
+		<inline-edit version="inline-tout-caption" model="toutInstance.caption"></inline-edit>
+	</h4>
+	<h4 class="caption_mobile_box">
+		<inline-edit version="inline-tout-caption" model="toutInstance.caption_mobile"></inline-edit>
+	</h4>
+	<p class="subcaption_box">
+		<a href=""><inline-edit subcaption="subcaption" version="inline-tout-subcaption" model="toutInstance.subcaption"></inline-edit></a>
+	</p>
+	<p class="subcaption_mobile_box">
+		<a href=""><inline-edit subcaption="subcaption" version="inline-tout-subcaption" model="toutInstance.subcaption_mobile"></inline-edit></a>
+	</p>
+</div>
+<ctapanel cta="toutInstance.cta" initial="0" max="2"></ctapanel>

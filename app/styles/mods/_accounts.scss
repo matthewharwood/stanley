@@ -1,0 +1,39 @@
+.account-profile .instruction h3.account-big {
+	font-size: 3.25em;
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "Pick an account to see projects within";
+		bottom: 0;
+		width: 100%;
+		height: 20px;
+		font-size: 12px;
+	}
+}
+.account-cap {
+	position: relative;
+	border-top: #333 solid 5px;
+	figcaption {
+		position: absolute;
+		bottom: 10%;
+		left: 16px;
+		h4 {
+			position: relative;
+			font-size: 1.35em;
+			color: #fff;
+			text-shadow:1px 1px #555;
+		}
+	}
+}
+.account-info {
+	padding: 16px;
+	background: #fff;
+
+	p {
+		font-family: $fontAkqa;
+		font-weight: 100;
+		font-size: .85em;
+		margin: 0;
+		padding: 0 0 16px 0;
+	}
+}

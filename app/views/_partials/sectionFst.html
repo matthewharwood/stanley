@@ -1,0 +1,22 @@
+<!-- TODO: Delete? IS THIS EVEN BEING USED?-->
+<section ng-controller="FstController" class="container-full control-hover fst" ng-repeat="fst in template.fst track by $index">
+    <fstcontrolpanel></fstcontrolpanel>
+    <figure file-dropzone="[image/png, image/jpeg, image/gif]" file="image2" file-name="imageFileName" data-max-file-size="3">
+        <img src="images/12-shoes.jpg" ng-src="{{image2}}" alt="">
+    </figure>
+    <div class="hero-block" ng-style="heroBlockStyle" id="fst_hero" ui-sortable>
+        <h1>
+            <inline-edit version="inline-fst-caption" model="fst.caption"></inline-edit>
+        </h1>
+
+        <h2>
+            <inline-edit version="inline-fst-subcaption" model="fst.subcaption"></inline-edit>
+        </h2>
+
+        <p>
+            <inline-edit version="inline-fst-body" model="fst.body"></inline-edit>
+        </p>
+        <ctapanel initial="1" max="2"></ctapanel>
+    </div>
+
+</section>

@@ -1,0 +1,97 @@
+//fonts css
+
+//druk web headlines
+@font-face {font-family: 'Jordan Druk Web'; src: url('../fonts/Jordan Druk Web-Bold.eot'); src: url('../fonts/Jordan Druk Web-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Jordan Druk Web-Bold.woff') format('woff'), url('../fonts/Jordan Druk Web-Bold.ttf') format('truetype'), url('../fonts/Jordan Druk Web-Bold.svg#JordanDrukWeb') format('svg'); font-weight: normal; font-style: normal; font-stretch: normal;}
+
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=2fed145a-7032-432d-b711-01b58d0c9602");
+
+@font-face{
+//body copy roman
+font-family:"NeueHaasGroteskText W01";
+src:url("../fonts/d24ae558-ac0f-4a43-96da-dd49b68947f5.eot?#iefix");
+src:url("../fonts/d24ae558-ac0f-4a43-96da-dd49b68947f5.eot?#iefix") format("eot"),url("../fonts/bb4a10bb-155d-4c1a-a813-c65e10fac36c.woff") format("woff"),url("../fonts/53812a68-b352-4951-b19c-fe964db7ffe2.ttf") format("truetype"),url("../fonts/389e288e-637b-44b2-9b5a-4ecec3ae8e2c.svg#389e288e-637b-44b2-9b5a-4ecec3ae8e2c") format("svg");
+}
+
+//body copy
+@font-face{
+font-family:"NHaasGroteskTXW01-56It";
+src:url("../fonts/baa1ea73-44ac-4bb5-a6af-b7fc486d335f.eot?#iefix");
+src:url("../fonts/baa1ea73-44ac-4bb5-a6af-b7fc486d335f.eot?#iefix") format("eot"),url("../fonts/ff571a3a-fb16-42b1-a691-23d8955aa35e.woff") format("woff"),url("../fonts/4e756bdf-4269-4158-aad4-70a09c5eed5c.ttf") format("truetype"),url("../fonts/91554ebe-051b-4fa7-bf6e-ac7ed5d0d107.svg#91554ebe-051b-4fa7-bf6e-ac7ed5d0d107") format("svg");
+}
+//dont use
+@font-face{
+font-family:"NHaasGroteskTXW01-65Md";
+src:url("../fonts/fca16206-1413-42b5-b3dd-ce6499d2bd3f.eot?#iefix");
+src:url("../fonts/fca16206-1413-42b5-b3dd-ce6499d2bd3f.eot?#iefix") format("eot"),url("../fonts/9e666926-4bc9-4013-849e-dffa25a41dbd.woff") format("woff"),url("../fonts/37e13425-7daf-407c-ba41-43ebd7d30855.ttf") format("truetype"),url("../fonts/9cd38052-e8fa-4a89-bfee-01d1675c9aa1.svg#9cd38052-e8fa-4a89-bfee-01d1675c9aa1") format("svg");
+}
+//body copy
+@font-face{
+font-family:"NHaasGroteskTXW01-75Bd";
+src:url("../fonts/8d290bc2-1f22-40ea-be12-7000a5406aff.eot?#iefix");
+src:url("../fonts/8d290bc2-1f22-40ea-be12-7000a5406aff.eot?#iefix") format("eot"),url("../fonts/60fa2ce6-c35e-4203-9bbf-25dd128daec5.woff") format("woff"),url("../fonts/dda121ff-e230-440f-83fb-40aefbd6e09a.ttf") format("truetype"),url("../fonts/c98782d3-8599-4314-b717-118a629a3aa4.svg#c98782d3-8599-4314-b717-118a629a3aa4") format("svg");
+}
+//italic subhead alt
+@font-face{
+font-family:"NHaasGroteskTXW01-76BdI";
+src:url("../fonts/1800a121-4983-4f47-9289-a1cd0876ef3e.eot?#iefix");
+src:url("../fonts/1800a121-4983-4f47-9289-a1cd0876ef3e.eot?#iefix") format("eot"),url("../fonts/135bdd95-f711-4095-8be6-fce6d3f9ef54.woff") format("woff"),url("../fonts/5d166d29-ec50-4ded-aa67-9ee9504d6fb2.ttf") format("truetype"),url("../fonts/a2b3b90c-2050-4961-95d2-4751f913a101.svg#a2b3b90c-2050-4961-95d2-4751f913a101") format("svg");
+}
+//subhead titles
+@font-face{
+font-family:"NHaasGroteskDSW01-75Bd";
+src:url("../fonts/ed82538c-6090-4c05-ac72-c636496df8de.eot?#iefix");
+src:url("../fonts/ed82538c-6090-4c05-ac72-c636496df8de.eot?#iefix") format("eot"),url("../fonts/da47ecd2-feea-403e-b247-9f8f5bb5157b.woff") format("woff"),url("../fonts/0deba34f-9242-462b-a359-74e95714f821.ttf") format("truetype"),url("../fonts/31c5f190-f4d8-436b-99bf-0561dd448586.svg#31c5f190-f4d8-436b-99bf-0561dd448586") format("svg");
+}
+
+//dont use
+@font-face{
+font-family:"NHaasGroteskDSW01-96Blk";
+src:url("../fonts/1c9b4284-e79e-4d6c-b73f-6cad5452b7b8.eot?#iefix");
+src:url("../fonts/1c9b4284-e79e-4d6c-b73f-6cad5452b7b8.eot?#iefix") format("eot"),url("../fonts/7e80bade-56f7-417a-acfe-4291ecbae208.woff") format("woff"),url("../fonts/d4bd0a8f-e32b-4e04-9a85-9793372dc9f7.ttf") format("truetype"),url("../fonts/2759ec8c-ea83-4c34-af69-98b81f1d9923.svg#2759ec8c-ea83-4c34-af69-98b81f1d9923") format("svg");
+}
+
+// Trade Gothic
+@font-face{
+font-family:"TradeGothicW01-BoldCn20 675334";
+src:url("../fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix");
+src:url("../fonts/257c802f-349c-4b4d-aefa-546d5de15ec6.eot?#iefix") format("eot"),url("../fonts/5fdc935e-9e30-442a-bbe9-8d887b858471.woff") format("woff"),url("../fonts/616c4c87-a077-43f4-a9f4-f01267c13818.ttf") format("truetype"),url("../fonts/c901ad5f-a842-4549-a1f4-583a97f7e169.svg#c901ad5f-a842-4549-a1f4-583a97f7e169") format("svg");
+}
+@font-face{
+font-family:"TradeGothicW01-BoldCn20 675337";
+src:url("../fonts/0061ab1d-ac0a-492f-a33d-d95980a095a8.eot?#iefix");
+src:url("../fonts/0061ab1d-ac0a-492f-a33d-d95980a095a8.eot?#iefix") format("eot"),url("../fonts/1feee13e-ded1-4d73-9d76-c5ed16a43117.woff") format("woff"),url("../fonts/b3f82d90-14bc-4c20-8a10-a6b7bd0f304f.ttf") format("truetype"),url("../fonts/5e602f8a-1e6a-461e-bfd8-ff46a5460527.svg#5e602f8a-1e6a-461e-bfd8-ff46a5460527") format("svg");
+}
+
+//	HEADLINE 1 / JORDAN DRUK – BOLD
+h1 {
+	font-family: 'Jordan Druk Web', Helvetica, sans-serif;
+	font-weight: normal;
+	color: #fff;
+}
+
+//Body Text 3 / Jordan NHG Text – 75 Bold
+h4 {
+	-webkit-font-smoothing: antialiased;
+	font-family: "NHaasGroteskDSW01-75Bd", Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: -16px;
+	//color: rgb(51, 51, 51);
+	text-transform: uppercase;
+}
+
+
+a {
+	-webkit-font-smoothing: antialiased;
+	border-bottom-color: rgb(51, 51, 51);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	//color: rgb(51, 51, 51);
+	cursor: pointer;
+	display: inline;
+	font-family: "NeueHaasGroteskText W01", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	height: auto;
+	letter-spacing: 0px;
+	text-decoration: none;
+}
